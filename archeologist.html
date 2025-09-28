@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ProjectShowcase—Prince</title>
+<link rel="icon" type="image/png" href="Images/Profile/title.png">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+
+    <!-- NAV BAR -->
+    <header class="nav">
+      <div class="brand"><span class="p-blue">P</span>rince</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About me</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact me</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="back-button-container">
+        <button id="backButton">← Back</button>
+    </div>
+
+<!-- Project Summary Section -->
+<section class="project-summary-section">
+  <div class="project-summary-content">
+    <div class="summary-text">
+      <h2>Project Summary</h2>
+      <p>
+        The protagonist is a 20-year-old Italian adventurer from Turin, emerging in the backdrop of the 1980s. Unlike the rugged, rough-edged explorers of popular media, his appearance and demeanor reflect an old-money aesthetic—polished, refined, and timeless. Coming from a background of privilege, he has been raised in an environment surrounded by art, history, and cultural sophistication. This upbringing instilled in him not only an appreciation for elegance but also a deep fascination with ancient civilizations and forgotten artifacts.
+      </p>
+      <p>Dressed in classic attire that nods to Italy’s rich heritage, his wardrobe merges practicality with refinement. Linen shirts, tailored trousers, leather belts, and polished shoes form his everyday look.
+        His 1980s-inspired fashion subtly reinforces the duality of his character—youthful energy combined with the composure and confidence of someone raised in a world of tradition and wealth.
+      </p>
+      <p>His passion for exploration is genuine, fueled by curiosity and a need to prove himself beyond the safety of luxury. Reckless at times yet driven, he embodies the spirit of adventure filtered through the lens of refinement. This mix of classic style, cultural pride, and restless ambition makes him a distinctive protagonist—an explorer whose journey is as much about personal identity as it is about uncovering the mysteries of the past.</p>
+    </div>
+    <div class="summary-image">
+      <img src="Projects/2D/archeologist/summary.png" alt="Project Image">
+    </div>
+  </div>
+</section>
+
+    <!-- SOFTWARE USED -->
+    <section class="about-section">
+      <h2>Software Used</h2>
+      <div class="software-grid">
+        <div class="software-item">
+          <img src="Logos/Software/Photoshop.png" alt="Photoshop">
+          <span>Photoshop</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Media Section (Stacked vertically) -->
+<section class="project-media-section">
+  <div class="media-item">
+    <img src="Projects/2D/archeologist/Archeologist_final.png" alt="Final Render">
+  </div>
+  <div class="media-item">
+    <img src="Projects/2D/archeologist/Archeologist_Line.png" alt="Lineart">
+  </div>
+  <div class="media-item">
+    <img src="Projects/2D/archeologist/Archeologist_Shilu.png" alt="silhouette">
+  </div>
+  <div class="media-item">
+    <img src="Projects/2D/archeologist/Archeologist_Ch.png" alt="Final">
+  </div>
+</section>
+
+<script>
+  // Get the type from query parameters
+const urlParams = new URLSearchParams(window.location.search);
+const type = urlParams.get('type');
+const backButton = document.getElementById('backButton');
+
+if(type === '2d'){
+  backButton.onclick = () => {
+    window.location.href = 'projects.html#2d-projects';
+  }
+} else if(type === '3d'){
+  backButton.onclick = () => {
+    window.location.href = 'projects.html#3d-projects';
+  }
+} else {
+  backButton.onclick = () => {
+    window.history.back();
+  }
+}
+</script>
+
+  </div>
+</body>
+</html>

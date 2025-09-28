@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Projects—Prince</title>
+  <link rel="icon" type="image/png" href="Images/Profile/title.png">
+  <link rel="icon" type="image/png" href="Images/Profile/title.png">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+
+    <!-- NAV BAR (same as other pages) -->
+    <header class="nav">
+      <div class="brand">
+        <span class="p-blue">P</span>rince
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About me</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact me</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Project Filter Bar -->
+    <div class="project-filter">
+      <button class="filter-btn active" data-target="2d">2D</button>
+      <button class="filter-btn" data-target="3d">3D</button>
+    </div>
+
+    <!-- Projects Container -->
+    <main class="projects-container">
+      <!-- 2D Projects -->
+      <div class="project-grid" id="2d-projects">
+        <div class="project-item">
+          <div class="project-thumb">
+            <a href="squirrel.html?type=2d">
+            <img src="Projects/2D/Thumbnails/Thumbnail.png" alt="2D Project 1">
+            <div class="project-caption">2D Character Design</div>
+            </a>
+          </div>
+        </div>
+        <div class="project-item">
+          <div class="project-thumb">
+            <a href="archeologist.html?type=2d">
+            <img src="Projects/2D/Thumbnails/Archeologist_Thumbnail.png" alt="2D Project 2">
+            <div class="project-caption">2D Character Design</div>
+            </a>
+          </div>
+        </div>
+        <div class="project-item">
+          <div class="project-thumb">
+            <a href="pumpkin.html?type=2d">           
+            <img src="Projects/2D/Thumbnails/Pumpkin_Thumbnail.png" alt="2D Project 3">
+            <div class="project-caption">2D Character Design</div></a> 
+          </div>
+        </div>
+        <div class="project-item">
+          <div class="project-thumb">
+            <a href="ghost.html?type=2d">
+            <img src="Projects/2D/Thumbnails/Ghost_Thumbnail.png" alt="2D Project 4">
+            <div class="project-caption">2D Character Design</div></a>
+          </div>
+        </div>
+        <div class="project-item">
+          <div class="project-thumb">
+            <a href="house.html?type=2d">
+            <img src="Projects/2D/Thumbnails/House_Thumbnail.png" alt="2D Project 5">
+            <div class="project-caption">Concept Art</div></a>
+          </div>
+        </div>
+                <div class="project-item">
+          <div class="project-thumb">
+            <a href="tent.html?type=2d">
+            <img src="Projects/2D/Thumbnails/Tent_Thumbnail.png" alt="2D Project 6">
+            <div class="project-caption">Concept Art</div></a>
+          </div>
+        </div>
+        <div class="project-item">
+          <div class="project-thumb">
+            <a href="lanther.html?type=2d">
+            <img src="Projects/2D/Thumbnails/Lanther_Thumbnail.png" alt="2D Project 7">
+            <div class="project-caption">Concept Art</div></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3D Projects -->
+      <div class="project-grid" id="3d-projects" style="display:none;">
+        <div class="project-item">
+          <div class="project-thumb">
+            <img src="Projects/2D/Thumbnails/Archeologist_Thumbnail.png" alt="3D Project 1">
+            <div class="project-caption">3D Character</div>
+          </div>
+        </div>
+        <div class="project-item">
+          <div class="project-thumb">
+            <img src="Projects/2D/Thumbnails/Thumbnail.png" alt="3D Project 2">
+            <div class="project-caption">3D Vehicle</div>
+          </div>
+        </div>
+        <div class="project-item">
+          <div class="project-thumb">
+            <img src="Projects/2D/Thumbnails/Ghost_Thumbnail.png" alt="3D Project 3">
+            <div class="project-caption">3D Environment</div>
+          </div>
+        </div>
+        <div class="project-item">
+          <div class="project-thumb">
+            <img src="Projects/2D/Thumbnails/Pumpkin_Thumbnail.png" alt="3D Project 4">
+            <div class="project-caption">3D Props</div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- JS -->
+  <script>
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const projects2D = document.getElementById('2d-projects');
+  const projects3D = document.getElementById('3d-projects');
+
+  function showProjects(target){
+    filterBtns.forEach(b => b.classList.remove('active'));
+    document.querySelector(`.filter-btn[data-target="${target}"]`).classList.add('active');
+
+    if(target === '2d'){
+      projects2D.style.display = 'grid';
+      projects3D.style.display = 'none';
+    } else {
+      projects2D.style.display = 'none';
+      projects3D.style.display = 'grid';
+    }
+  }
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      showProjects(btn.dataset.target);
+    });
+  });
+
+  // Default to 3D on page load
+window.addEventListener('DOMContentLoaded', () => {
+  if (location.hash === '#2d-projects') {
+    showProjects('2d');
+  } else if (location.hash === '#3d-projects') {
+    showProjects('3d');
+  } else {
+    // default if no hash
+    showProjects('3d');
+  }
+});
+</script>
+
+</body>
+</html>

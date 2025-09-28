@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Prince—Portfolio</title>
+  <link rel="icon" type="image/png" href="Images/Profile/title.png">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+
+    <!-- NAV -->
+    <header class="nav">
+      <div class="brand">
+        <span class="p-blue">P</span>rince
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="about.html">About me</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact me</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- MAIN -->
+    <main class="main" id="home">
+      <!-- Left: Intro Text -->
+      <section class="intro">
+        <h1>Hi, I’m <span class="name-blue">PRINCE</span></h1>
+
+        <div class="roles">
+          <div class="type" id="role-text">Game Artist 2D/3D</div>
+          <div class="caret"></div>
+        </div>
+
+        <p class="summary">
+          I am an aspiring Game Artist, Concept Artist, 
+          and Game Designer with versatile skills in both 2D and 3D art. 
+          My passion lies in bringing creative ideas to life, from concept sketches and character designs to game-ready 3D models and interactive gameplay elements. I enjoy contributing across the pipeline—concept development, modeling, texturing, and integration into game engines like Unity and Unreal. With a strong foundation in design principles, storytelling, and visual aesthetics, 
+          I aim to craft engaging experiences that resonate with players. 
+        </p>
+
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/vimalprince/" target="_blank">
+        <img src="Logos/LinkedIn/LinkedIn.png" alt="LinkedIn">
+      </a>
+      <a href="https://vimal_prince.artstation.com/" target="_blank">
+        <img src="Logos/ArtStation/ArtStation-white.png" alt="ArtStation">
+      </a>
+      <a href="https://www.instagram.com/vimalprince_/" target="_blank">
+        <img src="Logos/Insta/Instagram_Glyph_Gradient.png" alt="Instagram">
+      </a>
+    </div>
+      </section>
+
+      <!-- Right: Profile Image -->
+      <aside class="profile-wrap">
+        <div class="profile-img">
+          <!-- Replace with your photo -->
+          <img src="Images/Profile/Profile_2.png" alt="Profile">
+        </div>
+      </aside>
+    </main>
+
+  </div>
+
+  <!-- Typing JS -->
+  <script>
+    const roles = ["Game Artist 2D/3D","Concept Artist","Game Designer"];
+    const el = document.getElementById('role-text');
+    let roleIndex = 0, charIndex = 0, typing = true;
+
+    function type() {
+      const current = roles[roleIndex];
+      if (typing) {
+        el.textContent = current.slice(0, charIndex + 1);
+        charIndex++;
+        if (charIndex === current.length) {
+          typing = false;
+          setTimeout(type, 1400);
+        } else setTimeout(type, 70);
+      } else {
+        el.textContent = current.slice(0, charIndex - 1);
+        charIndex--;
+        if (charIndex === 0) {
+          typing = true;
+          roleIndex = (roleIndex + 1) % roles.length;
+          setTimeout(type, 200);
+        } else setTimeout(type, 40);
+      }
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+      el.textContent = "";
+      setTimeout(type, 600);
+    });
+  </script>
+</body>
+</html>

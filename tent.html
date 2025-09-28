@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ProjectShowcase—Prince</title>
+<link rel="icon" type="image/png" href="Images/Profile/title.png">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+
+    <!-- NAV BAR -->
+    <header class="nav">
+      <div class="brand"><span class="p-blue">P</span>rince</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About me</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact me</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="back-button-container">
+        <button id="backButton">← Back</button>
+    </div>
+
+<!-- Project Summary Section -->
+<section class="project-summary-section">
+  <div class="project-summary-content">
+    <div class="summary-text">
+      <h2>Project Summary</h2>
+      <p>
+        I designed a tent with a wooden base and an animal skin cover as part of my texturing practice. The goal was to study natural materials and how they interact visually. The wood structure provides a sturdy framework, while the stretched animal skin introduces organic patterns, color variations, and surface imperfections. This project helped me 
+        explore how texture details contribute to authenticity in primitive, hand-crafted structures.
+      </p>
+    </div>
+  </div>
+</section>
+
+    <!-- SOFTWARE USED -->
+    <section class="about-section">
+      <h2>Software Used</h2>
+      <div class="software-grid">
+        <div class="software-item">
+          <img src="Logos/Software/Photoshop.png" alt="Photoshop">
+          <span>Photoshop</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Media Section (Stacked vertically) -->
+<section class="project-media-section">
+  <div class="media-item">
+    <img src="Projects/2D/tent/Tent_Progress_2.png" alt="Progress">
+  </div>
+  <div class="media-item">
+    <img src="Projects/2D/tent/Tent_Final.png" alt="Final Render">
+  </div>
+</section>
+
+<script>
+  // Get the type from query parameters
+const urlParams = new URLSearchParams(window.location.search);
+const type = urlParams.get('type');
+const backButton = document.getElementById('backButton');
+
+if(type === '2d'){
+  backButton.onclick = () => {
+    window.location.href = 'projects.html#2d-projects';
+  }
+} else if(type === '3d'){
+  backButton.onclick = () => {
+    window.location.href = 'projects.html#3d-projects';
+  }
+} else {
+  backButton.onclick = () => {
+    window.history.back();
+  }
+}
+</script>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ProjectShowcase—Prince</title>
+<link rel="icon" type="image/png" href="Images/Profile/title.png">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+
+    <!-- NAV BAR -->
+    <header class="nav">
+      <div class="brand"><span class="p-blue">P</span>rince</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About me</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact me</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="back-button-container">
+        <button id="backButton">← Back</button>
+    </div>
+
+<!-- Project Summary Section -->
+<section class="project-summary-section">
+  <div class="project-summary-content">
+    <div class="summary-text">
+      <h2>Project Summary</h2>
+      <p>
+        The protagonist of this 2D Halloween-themed platformer is a playful fusion of a pumpkin and a cartoon ghost, designed to embody both charm and spookiness. With its round pumpkin head and whimsical ghostly form, the character strikes a perfect balance between eerie and approachable, making it an ideal fit for a lighthearted Halloween adventure. The design emphasizes expressive features, giving the character a lively personality that appeals to players of all ages.
+      </p>
+      <p>
+        To bring this character to life, sprite sheets have been developed with a full range of animations. The run and jump sequences highlight its agility and cartoonish bounce, while the dash and attack animations showcase its adventurous spirit and combat readiness. A dramatic death animation completes the set, adding flair and personality even in defeat. Together, these elements create a protagonist that is both visually engaging and mechanically dynamic, driving the charm and energy of the game.
+      </p>
+    </div>
+    <div class="summary-image">
+      <img src="Projects/2D/pumpkin/summary.gif" alt="Project Image">
+    </div>
+  </div>
+</section>
+
+    <!-- SOFTWARE USED -->
+    <section class="about-section">
+      <h2>Software Used</h2>
+      <div class="software-grid">
+        <div class="software-item">
+          <img src="Logos/Software/Photoshop.png" alt="Photoshop">
+          <span>Photoshop</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Media Section (Stacked vertically) -->
+<section class="project-media-section">
+  <div class="media-item">
+    <img src="Projects/2D/pumpkin/Pumpkin_MoodBoard.png" alt="Final Render">
+  </div>
+  <div class="media-item">
+    <img src="Projects/2D/pumpkin/Pumpkin_progress.png" alt="Lineart">
+  </div>
+  <div class="media-item">
+    <img src="Projects/2D/pumpkin/Pumpkin_SpriteSheet.png" alt="silhouette">
+  </div>
+  <div class="media-item">
+    <img src="Projects/2D/pumpkin/Pumpkin.gif" alt="Final">
+  </div>
+</section>
+
+<script>
+  // Get the type from query parameters
+const urlParams = new URLSearchParams(window.location.search);
+const type = urlParams.get('type');
+const backButton = document.getElementById('backButton');
+
+if(type === '2d'){
+  backButton.onclick = () => {
+    window.location.href = 'projects.html#2d-projects';
+  }
+} else if(type === '3d'){
+  backButton.onclick = () => {
+    window.location.href = 'projects.html#3d-projects';
+  }
+} else {
+  backButton.onclick = () => {
+    window.history.back();
+  }
+}
+</script>
+
+  </div>
+</body>
+</html>

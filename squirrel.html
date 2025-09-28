@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ProjectShowcase—Prince</title>
+<link rel="icon" type="image/png" href="Images/Profile/title.png">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+
+    <!-- NAV BAR -->
+    <header class="nav">
+      <div class="brand"><span class="p-blue">P</span>rince</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About me</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact me</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="back-button-container">
+        <button id="backButton">← Back</button>
+    </div>
+
+<!-- Project Summary Section -->
+<section class="project-summary-section">
+  <div class="project-summary-content">
+    <div class="summary-text">
+      <h2>Project Summary</h2>
+      <p>For my class assignment, I was tasked by my art tutor to design a humanoid squirrel. I chose to explore a Stone Age–inspired concept, blending prehistoric human characteristics with the natural traits of a squirrel. To create a solid foundation for my design, I gathered multiple references, studying both squirrels and Paleolithic humans, focusing on anatomy, posture, and distinctive features. These references guided me in crafting a detailed turnaround of the character, including front, back, and front three-quarter views, to ensure a consistent and well-rounded depiction from all angles.
+      </p><br>
+      <p>In developing the visual style, I opted for an earthy, toon-inspired palette that evokes a natural, prehistoric feel. I also aimed to maintain a monochromatic approach, keeping the color scheme cohesive and harmonious across the character’s design. This allowed me to emphasize form, shape, and detail without the distraction of multiple contrasting colors. By combining these elements—careful anatomical observation, structured turnarounds, and a considered color strategy—I was able to create a character that feels both whimsical and grounded in a believable Stone Age setting. This exercise not only challenged me to merge animal and human traits creatively but also helped me refine my skills in character design, turnaround presentation, and color harmony.</p>
+    </div>
+    <div class="summary-image">
+      <img src="Projects/2D/squirrel/Summary.png" alt="Project Image">
+    </div>
+  </div>
+</section>
+
+    <!-- SOFTWARE USED -->
+    <section class="about-section">
+      <h2>Software Used</h2>
+      <div class="software-grid">
+        <div class="software-item">
+          <img src="Logos/Software/Photoshop.png" alt="Photoshop">
+          <span>Photoshop</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Media Section (Stacked vertically) -->
+<section class="project-media-section">
+  <div class="media-item">
+    <img src="Projects/2D/squirrel/Final.png" alt="Final Render">
+  </div>
+  <div class="media-item">
+    <img src="Projects/2D/squirrel/Lineart.png" alt="Lineart">
+  </div>
+  <div class="media-item">
+    <img src="Projects/2D/squirrel/Shulu.png" alt="silhouette">
+  </div>
+    <div class="media-item">
+    <img src="Projects/2D/squirrel/Squirrel_CharacterArt.png" alt="Final">
+  </div>
+</section>
+
+<script>
+  // Get the type from query parameters
+const urlParams = new URLSearchParams(window.location.search);
+const type = urlParams.get('type');
+const backButton = document.getElementById('backButton');
+
+if(type === '2d'){
+  backButton.onclick = () => {
+    window.location.href = 'projects.html#2d-projects';
+  }
+} else if(type === '3d'){
+  backButton.onclick = () => {
+    window.location.href = 'projects.html#3d-projects';
+  }
+} else {
+  backButton.onclick = () => {
+    window.history.back();
+  }
+}
+</script>
+
+  </div>
+</body>
+</html>
