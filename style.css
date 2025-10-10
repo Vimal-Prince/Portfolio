@@ -571,6 +571,7 @@ h1 .name-blue{ color:var(--accent-blue); }
   padding:12px; /* padding around image */
   object-fit:contain; /* maintain aspect ratio without cropping */
 }
+
 .summary-text {
   flex: 1 1 55%;
 }
@@ -590,7 +591,8 @@ h1 .name-blue{ color:var(--accent-blue); }
   text-align: center;
 }
 
-.media-item img {
+.media-item img,
+.media-item video {
   max-width: 100%;
   height: auto;
   border-radius: 12px;

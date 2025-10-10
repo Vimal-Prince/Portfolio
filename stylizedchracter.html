@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ProjectShowcase—Prince</title>
+<link rel="icon" type="image/png" href="Images/Profile/title.png">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+
+    <!-- NAV BAR -->
+    <header class="nav">
+      <div class="brand"><span class="p-blue">P</span>rince</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About me</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact me</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="back-button-container">
+        <button id="backButton">← Back</button>
+    </div>
+
+<!-- Project Summary Section -->
+<section class="project-summary-section">
+  <div class="project-summary-content">
+    <div class="summary-text">
+      <h2>Project Summary</h2>
+      <p>
+        This stylized 3D character was created for real-time rendering, focusing on appealing shapes, expressive forms, and clean topology. The full workflow included high-poly modeling and sculpting, retopology, baking, and texturing.
+      </p>
+      <p>The character was modeled and retopologized in Maya, sculpted in ZBrush, and textured in Substance Painter using 2K resolution maps for optimal quality. Final lighting, presentation, and rendering were done in Marmoset Toolbag, emphasizing balanced materials, vibrant colors, and a polished game-ready look.
+      </p>
+      <p>Texture maps: 2K</p>
+    </div>
+  </div>
+</section>
+
+    <!-- SOFTWARE USED -->
+    <section class="about-section">
+      <h2>Software Used</h2>
+      <div class="software-grid">
+        <div class="software-item">
+          <img src="Logos/Software/autodesk-maya-seeklogo.png" alt="Maya">
+          <span>Maya</span>
+          <img src="Logos/Software/zbrush-seeklogo.png" alt="ZBrush">
+          <span>ZBrush</span>       
+          <img src="Logos/Software/SubstancePainter_icon.png" alt="Substance 3D Painter">
+          <span>Substance 3D Painter</span>
+          <img src="Logos/Software/Marmoset.png" alt="Marmoset toolbag">
+          <span>Marmoset toolbag</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Media Section (Stacked vertically) -->
+<section class="project-media-section">
+  <div class="media-item">
+    <img src="Projects/3D/Stylized_Chracter/Turnarounds.png" alt="Final Render">
+  </div>
+  <div class="media-item">
+    <img src="Projects/3D/Stylized_Chracter/Wireframe.png" alt="Wireframe">
+  </div>
+  <div class="media-item">
+    <video controls autoplay loop muted preload="auto">
+    <source src="Projects/3D/Stylized_Chracter/Turntable_ShotCam.mp4" type="video/mp4">
+  </div>
+  <div class="media-item">
+    <img src="Projects/3D/Stylized_Chracter/UV.png" alt="UV Layout">
+  </div>
+  <div class="media-item">
+    <img src="Projects/3D/Stylized_Chracter/TextureMaps.png" alt="TextureMaps">
+  </div>
+    <div class="media-item">
+    <img src="Projects/3D/Stylized_Chracter/Character_Props.png" alt="Character Props">
+  </div>
+</section>
+
+<script>
+  // Get the type from query parameters
+const urlParams = new URLSearchParams(window.location.search);
+const type = urlParams.get('type');
+const backButton = document.getElementById('backButton');
+
+if(type === '2d'){
+  backButton.onclick = () => {
+    window.location.href = 'projects.html#2d-projects';
+  }
+} else if(type === '3d'){
+  backButton.onclick = () => {
+    window.location.href = 'projects.html#3d-projects';
+  }
+} else {
+  backButton.onclick = () => {
+    window.history.back();
+  }
+}
+</script>
+
+  </div>
+</body>
+</html>
